@@ -8,6 +8,8 @@
 #    tls:
 #      private_key: '/etc/ssl/private/munin/key.pem'
 
+# 
+
 munin_master:
   globals:
     dbdir: "/var/lib/munin"
@@ -15,10 +17,11 @@ munin_master:
     logdir: "/var/log/munin"
     rundir: "/var/run/munin"
     includedir: "/etc/munin/munin-conf.d"
-  hosts:
-    "localhost.localdomain":
-      address: "127.0.0.1"
-      use_node_name: "no"
+  hosts: autodiscover
+  #hosts:
+  #  "localhost.localdomain":
+  #    address: "127.0.0.1"
+  #    use_node_name: "no"
 
 munin_node:
   log_level: 4
